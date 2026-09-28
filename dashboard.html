@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+  <h1 style="margin-bottom:4px">Dashboard</h1>
+  <p class="muted" style="margin-bottom:28px">Visão geral do conteúdo publicado no site.</p>
+
+  <div class="stat-grid" id="stat-grid"></div>
+
+  <div class="admin-card">
+    <h3>Estatísticas de visitantes</h3>
+    <p>O GitHub Pages já registra visualizações e origens de tráfego automaticamente para quem administra o repositório.</p>
+    <a class="btn btn-secondary btn-sm" id="traffic-link" href="#" target="_blank" rel="noopener">Ver estatísticas de tráfego no GitHub</a>
+  </div>
+
+  <div class="admin-card">
+    <h3>Atalhos</h3>
+    <div class="grid grid-3">
+      <a class="card" href="noticias.html" style="text-decoration:none"><h3 style="margin:0">+ Notícia</h3></a>
+      <a class="card" href="avisos.html" style="text-decoration:none"><h3 style="margin:0">+ Aviso</h3></a>
+      <a class="card" href="eventos.html" style="text-decoration:none"><h3 style="margin:0">+ Evento</h3></a>
+      <a class="card" href="projetos.html" style="text-decoration:none"><h3 style="margin:0">+ Projeto</h3></a>
+      <a class="card" href="galeria.html" style="text-decoration:none"><h3 style="margin:0">+ Foto</h3></a>
+      <a class="card" href="configuracoes.html" style="text-decoration:none"><h3 style="margin:0">Configurações</h3></a>
+    </div>
+  </div>
+</main>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="dashboard-admin.js"></script>
+</body>
+</html>

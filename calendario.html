@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendário escolar — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+  <div class="admin-page-head">
+    <div>
+      <h1 style="margin-bottom:4px">Calendário escolar</h1>
+      <p class="muted">Estas datas alimentam a contagem regressiva da Home em tempo real.</p>
+    </div>
+  </div>
+
+  <form class="admin-card" id="calendar-form">
+    <div class="grid grid-2">
+      <label class="field"><span>Início das aulas</span><input type="date" id="field-startDate"></label>
+      <label class="field"><span>Fim das aulas</span><input type="date" id="field-endDate" required></label>
+      <label class="field"><span>Início do recesso</span><input type="date" id="field-recessStart"></label>
+      <label class="field"><span>Retorno das aulas</span><input type="date" id="field-recessReturn"></label>
+    </div>
+
+    <label class="field">
+      <span>Como contar os dias na Home</span>
+      <select id="field-countMode">
+        <option value="corridos">Dias corridos (mais simples)</option>
+        <option value="letivos">Apenas dias letivos (dias úteis, exceto datas marcadas abaixo)</option>
+      </select>
+    </label>
+
+    <div id="excluded-dates-section">
+      <h3 style="margin-top:24px">Datas não letivas (feriados, recessos, etc.)</h3>
+      <p class="hint" style="margin-bottom:10px">Usadas apenas no modo "dias letivos" para não contar essas datas.</p>
+      <div id="excluded-dates-list"></div>
+      <button type="button" class="btn btn-sm" id="add-excluded-btn">+ Adicionar data</button>
+    </div>
+
+    <h3 style="margin-top:28px">Outros períodos importantes</h3>
+    <p class="hint" style="margin-bottom:10px">Exibidos como referência interna (ex.: conselho de classe, provas finais).</p>
+    <div id="other-periods-list"></div>
+    <button type="button" class="btn btn-sm" id="add-period-btn">+ Adicionar período</button>
+
+    <div class="modal-actions" style="border-top:1px solid var(--line);margin-top:28px;padding-top:20px;justify-content:flex-start">
+      <button type="submit" class="btn btn-primary" id="calendar-save-btn">Salvar calendário</button>
+    </div>
+  </form>
+</main>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="calendar-admin.js"></script>
+</body>
+</html>

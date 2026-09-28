@@ -1,0 +1,30 @@
+{
+  "schoolName": "Colégio Estadual do Campo Irmã Ambrosia Sabatovish",
+  "tagline": "Educação do campo com qualidade e pertencimento.",
+  "homeSubtitle": "[INSERIR TEXTO DE APRESENTAÇÃO DA ESCOLA]",
+  "aboutText": "# Nossa história\n\n[INSERIR HISTÓRIA DO COLÉGIO]\n\n## Nossa equipe\n\n[INSERIR INFORMAÇÃO SOBRE A DIREÇÃO E EQUIPE PEDAGÓGICA]",
+  "phone": "[INSERIR TELEFONE]",
+  "email": "[INSERIR E-MAIL]",
+  "address": "[INSERIR ENDEREÇO]",
+  "mapEmbedUrl": "",
+  "officeHours": "[INSERIR HORÁRIO DE ATENDIMENTO]",
+  "facebook": "",
+  "instagram": "",
+  "youtube": "",
+  "whatsapp": "",
+  "formEndpoint": "[INSERIR-ENDPOINT-DE-FORMULARIO]",
+  "footerNote": "Site institucional",
+  "accentColor": "#1D5A96",
+  "faviconEmoji": "🏫",
+  "logo": "",
+  "heroImage": "",
+  "heroImageHistory": [],
+  "infoCards": [
+    { "icon": "📅", "title": "Calendário escolar", "text": "Datas de início, fim e recessos do ano letivo.", "link": "index.html#countdown" },
+    { "icon": "📢", "title": "Comunicados", "text": "Avisos oficiais da direção e secretaria.", "link": "noticias.html" },
+    { "icon": "📝", "title": "Matrículas", "text": "[INSERIR INFORMAÇÃO SOBRE MATRÍCULAS]", "link": "contato.html" },
+    { "icon": "🎓", "title": "Projetos", "text": "Iniciativas pedagógicas em andamento no colégio.", "link": "projetos.html" },
+    { "icon": "📚", "title": "Atividades", "text": "[INSERIR INFORMAÇÃO SOBRE ATIVIDADES]", "link": "eventos.html" },
+    { "icon": "🏫", "title": "Sobre o colégio", "text": "Conheça nossa história, estrutura e proposta.", "link": "o-colegio.html" }
+  ]
+}

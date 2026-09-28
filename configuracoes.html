@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configurações — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+  <div class="admin-page-head">
+    <div>
+      <h1 style="margin-bottom:4px">Configurações do site</h1>
+      <p class="muted">Tudo aqui é aplicado ao site público sem precisar mexer em código.</p>
+    </div>
+  </div>
+
+  <form id="settings-form">
+
+    <div class="admin-card">
+      <h3>Identidade</h3>
+      <label class="field"><span>Nome do colégio</span><input type="text" id="field-schoolName"></label>
+      <label class="field"><span>Frase de apresentação (rodapé)</span><input type="text" id="field-tagline"></label>
+      <label class="field"><span>Subtítulo da Home (abaixo do título principal)</span><input type="text" id="field-homeSubtitle"></label>
+      <label class="field"><span>Cor de destaque</span><input type="color" id="field-accentColor" style="max-width:100px"></label>
+      <label class="field"><span>Ícone da aba (emoji)</span><input type="text" id="field-faviconEmoji" style="max-width:100px"></label>
+      <div class="field-image">
+        <span style="font-weight:600;display:block;margin-bottom:8px">Logo</span>
+        <div id="logo-preview" style="margin-bottom:10px"></div>
+        <input type="file" id="logo-upload-file" accept="image/png,image/jpeg,image/webp,image/gif">
+        <button type="button" class="btn btn-sm" id="logo-upload-btn">Enviar logo</button>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h3>Imagem principal da Home</h3>
+      <div id="hero-preview" style="margin-bottom:10px"></div>
+      <input type="file" id="hero-upload-file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <button type="button" class="btn btn-sm" id="hero-upload-btn">Alterar imagem principal</button>
+      <button type="button" class="btn btn-sm btn-secondary" id="hero-restore-btn" hidden>Restaurar imagem anterior</button>
+    </div>
+
+    <div class="admin-card">
+      <h3>Sobre o colégio</h3>
+      <p class="hint" style="margin-bottom:10px">Texto exibido na página "O Colégio".</p>
+      <div class="field field-markdown">
+        <div class="md-toolbar">
+          <button type="button" data-md="bold">Negrito</button>
+          <button type="button" data-md="italic">Itálico</button>
+          <button type="button" data-md="h2">Título</button>
+          <button type="button" data-md="list">Lista</button>
+          <button type="button" data-md-preview="1">Pré-visualizar</button>
+        </div>
+        <textarea id="field-aboutText" rows="10"></textarea>
+        <div id="field-aboutText-preview" class="md-preview" hidden></div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h3>Contato</h3>
+      <label class="field"><span>Telefone</span><input type="text" id="field-phone"></label>
+      <label class="field"><span>E-mail</span><input type="email" id="field-email"></label>
+      <label class="field"><span>Endereço</span><input type="text" id="field-address"></label>
+      <label class="field"><span>Horário de atendimento</span><input type="text" id="field-officeHours"></label>
+      <label class="field"><span>URL do mapa incorporado (Google Maps &gt; Compartilhar &gt; Incorporar)</span><input type="url" id="field-mapEmbedUrl"></label>
+      <label class="field"><span>Endpoint do formulário de contato (Formspree ou similar)</span><input type="url" id="field-formEndpoint"></label>
+    </div>
+
+    <div class="admin-card">
+      <h3>Redes sociais</h3>
+      <label class="field"><span>Facebook</span><input type="url" id="field-facebook"></label>
+      <label class="field"><span>Instagram</span><input type="url" id="field-instagram"></label>
+      <label class="field"><span>YouTube</span><input type="url" id="field-youtube"></label>
+      <label class="field"><span>WhatsApp (link wa.me)</span><input type="url" id="field-whatsapp"></label>
+    </div>
+
+    <div class="admin-card">
+      <h3>Cards de "Informações importantes" (Home)</h3>
+      <div id="info-cards-list"></div>
+      <button type="button" class="btn btn-sm" id="add-info-card-btn">+ Adicionar card</button>
+    </div>
+
+    <div class="admin-card">
+      <h3>Rodapé</h3>
+      <label class="field"><span>Texto extra do rodapé</span><input type="text" id="field-footerNote"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="settings-save-btn">Salvar configurações</button>
+  </form>
+</main>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="crud.js"></script>
+<script src="settings-admin.js"></script>
+</body>
+</html>

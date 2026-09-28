@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galeria — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+
+  <div id="album-list-view">
+    <div class="admin-page-head">
+      <div>
+        <h1 style="margin-bottom:4px">Galeria</h1>
+        <p class="muted">Organize as fotos do colégio em álbuns.</p>
+      </div>
+      <button class="btn btn-primary" id="album-new-btn">+ Novo álbum</button>
+    </div>
+    <div class="admin-card" id="albums-list"></div>
+  </div>
+
+  <div id="album-view" hidden>
+    <button class="btn btn-secondary btn-sm" id="album-back-btn" style="margin-bottom:16px">&larr; Todos os álbuns</button>
+    <div class="admin-card">
+      <h2 id="album-detail-title" style="margin-bottom:16px"></h2>
+      <div class="field-image" style="margin-bottom:20px">
+        <span style="font-weight:600;display:block;margin-bottom:8px">Adicionar foto</span>
+        <input type="file" id="album-upload-file" accept="image/png,image/jpeg,image/webp,image/gif" style="margin-bottom:8px">
+        <input type="text" id="album-upload-caption" placeholder="Legenda (opcional)" style="margin-bottom:8px;width:100%;max-width:360px">
+        <div><button class="btn btn-primary btn-sm" id="album-upload-btn">Adicionar foto ao álbum</button></div>
+        <p class="hint">JPG, PNG, WEBP ou GIF, até 5MB.</p>
+      </div>
+      <div class="grid grid-4" id="album-images-admin"></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="modal" id="album-form-modal">
+  <div class="modal-box">
+    <h2 id="album-form-title">Novo álbum</h2>
+    <form id="album-form">
+      <label class="field"><span>Nome do álbum</span><input type="text" id="album-form-name" required></label>
+      <label class="field"><span>Descrição (opcional)</span><textarea id="album-form-desc" rows="2"></textarea></label>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="album-form-cancel">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="gallery-admin.js"></script>
+</body>
+</html>

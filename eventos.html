@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventos — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+  <div class="admin-page-head">
+    <div>
+      <h1 id="crud-title" style="margin-bottom:4px">Eventos</h1>
+      <p class="muted" id="crud-intro"></p>
+    </div>
+    <button class="btn btn-primary" id="crud-new-btn">+ Novo evento</button>
+  </div>
+  <div class="admin-card" id="crud-list"></div>
+</main>
+
+<div class="modal" id="crud-form-modal">
+  <div class="modal-box">
+    <h2 id="crud-form-title">Nova entrada</h2>
+    <form id="crud-form">
+      <div id="crud-form-fields"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="crud-form-cancel">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="crud-form-submit">Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="crud.js"></script>
+<script>
+  initCrudPage({
+    key: "eventos",
+    title: "Eventos",
+    intro: "Eventos futuros aparecem automaticamente em Próximos eventos na Home.",
+    dataFile: "data/events.json",
+    sortKey: "date",
+    titleKey: "name",
+    listColumns: [
+      { key: "name", label: "Nome" },
+      { key: "date", label: "Data", type: "date" },
+      { key: "location", label: "Local" },
+    ],
+    fields: [
+      { key: "name", label: "Nome do evento", type: "text", required: true },
+      { key: "date", label: "Data", type: "date", required: true },
+      { key: "time", label: "Horário", type: "time" },
+      { key: "location", label: "Local", type: "text" },
+      { key: "description", label: "Descrição", type: "textarea" },
+      { key: "image", label: "Imagem (opcional)", type: "image" },
+      { key: "link", label: "Link (opcional)", type: "url" },
+    ],
+  });
+</script>
+</body>
+</html>

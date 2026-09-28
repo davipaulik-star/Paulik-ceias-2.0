@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notícias — Painel administrativo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>const BASE = "../";</script>
+</head>
+<body class="admin-body">
+<header id="admin-header"></header>
+<main class="admin-main">
+  <div class="admin-page-head">
+    <div>
+      <h1 id="crud-title" style="margin-bottom:4px">Notícias</h1>
+      <p class="muted" id="crud-intro">Crie, edite, publique ou remova notícias do colégio.</p>
+    </div>
+    <button class="btn btn-primary" id="crud-new-btn">+ Nova notícia</button>
+  </div>
+  <div class="admin-card" id="crud-list"></div>
+</main>
+
+<div class="modal" id="crud-form-modal">
+  <div class="modal-box">
+    <h2 id="crud-form-title">Nova entrada</h2>
+    <form id="crud-form">
+      <div id="crud-form-fields"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="crud-form-cancel">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="crud-form-submit">Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/helpers.js"></script>
+<script src="../assets/js/github-api.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script src="admin-common.js"></script>
+<script src="crud.js"></script>
+<script>
+  initCrudPage({
+    key: "noticias",
+    title: "Notícias",
+    intro: "Crie, edite, publique ou remova notícias do colégio.",
+    dataFile: "data/news.json",
+    sortKey: "date",
+    titleKey: "title",
+    listColumns: [
+      { key: "title", label: "Título" },
+      { key: "category", label: "Categoria" },
+      { key: "date", label: "Data", type: "date" },
+      { key: "published", label: "Publicada", type: "boolean" },
+    ],
+    fields: [
+      { key: "title", label: "Título", type: "text", required: true },
+      { key: "summary", label: "Resumo (aparece nos cards)", type: "textarea", required: true },
+      { key: "content", label: "Texto completo", type: "markdown" },
+      { key: "coverImage", label: "Imagem principal", type: "image" },
+      { key: "category", label: "Categoria", type: "text" },
+      { key: "author", label: "Autor", type: "text" },
+      { key: "date", label: "Data", type: "date", required: true },
+      { key: "published", label: "Publicada no site", type: "boolean", default: true },
+    ],
+  });
+</script>
+</body>
+</html>
